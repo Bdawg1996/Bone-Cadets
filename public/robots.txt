@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# Replace the sitemap URL below with your production domain if different
-Sitemap: https://bonecadet.vercel.app/sitemap.xml
