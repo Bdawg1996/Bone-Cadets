@@ -13,6 +13,11 @@
         .animate-fade-in { animation: fade-in 0.8s ease-out; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        #photo-carousel div { animation: scroll 30s linear infinite; }
     </style>
 </head>
 <body style="background: linear-gradient(135deg, #CABA9C 0%, #ffffff 50%, #f5f1e8 100%);">
@@ -87,7 +92,7 @@
                         </div>
                     </div>
                     <div class="rounded-3xl h-96 shadow-2xl overflow-hidden">
-                        <img src="./images/hero_image.jpeg" alt="Dog walking adventure" class="w-full h-full object-cover" />
+                        <img src="./images/compressed/hero_image.jpeg" alt="Dog walking adventure" class="w-full h-full object-cover" />
                     </div>
                     <div class="md:hidden mt-6">
                         <a href="#services" class="block text-center text-white px-8 py-4 rounded-full font-bold text-lg" style="background: linear-gradient(135deg, #4C6444 0%, #102820 100%);">
@@ -107,7 +112,7 @@
             </div>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="rounded-3xl h-96 shadow-2xl overflow-hidden">
-                    <img src="./images/about_image.jpeg" alt="Brandon with dogs" class="w-full h-full object-cover" />
+                    <img src="./images/compressed/about_image.jpeg" alt="Brandon with dogs" class="w-full h-full object-cover" />
                 </div>
                 <div class="space-y-6">
                     <h3 class="text-3xl font-bold text-white">Meet Your Walker</h3>
@@ -301,20 +306,45 @@
                     Pictures that perfectly capture the moment are our specialty
                 </p>
             </div>
-            <div class="overflow-x-auto scrollbar-hide">
-                <div class="flex gap-3 px-4" style="min-width: max-content;">
-                    <img src="./images/photo1.jpeg" alt="Dog adventure 1" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0" />
-                    <img src="./images/photo2.jpeg" alt="Dog adventure 2" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0" />
-                    <img src="./images/photo3.jpeg" alt="Dog adventure 3" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0" />
-                    <img src="./images/photo4.jpeg" alt="Dog adventure 4" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0" />
-                    <img src="./images/photo5.jpeg" alt="Dog adventure 5" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0" />
-                    <img src="./images/photo6.jpeg" alt="Dog adventure 6" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0" />
-                    <img src="./images/photo7.jpeg" alt="Dog adventure 7" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0" />
-                    <img src="./images/photo8.jpeg" alt="Dog adventure 8" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0" />
+            <div class="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing" id="photo-carousel">
+                <div class="flex gap-3 px-4" style="min-width: max-content; animation: scroll 30s linear infinite;">
+                    <img src="./images/compressed/photo1.jpeg" alt="Dog adventure 1" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0 cursor-pointer hover:scale-105 transition-transform" onclick="openLightbox(this)" />
+                    <img src="./images/compressed/photo2.jpeg" alt="Dog adventure 2" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0 cursor-pointer hover:scale-105 transition-transform" onclick="openLightbox(this)" />
+                    <img src="./images/compressed/photo3.jpeg" alt="Dog adventure 3" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0 cursor-pointer hover:scale-105 transition-transform" onclick="openLightbox(this)" />
+                    <img src="./images/compressed/photo4.jpeg" alt="Dog adventure 4" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0 cursor-pointer hover:scale-105 transition-transform" onclick="openLightbox(this)" />
+                    <img src="./images/compressed/photo5.jpeg" alt="Dog adventure 5" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0 cursor-pointer hover:scale-105 transition-transform" onclick="openLightbox(this)" />
+                    <img src="./images/compressed/photo6.jpeg" alt="Dog adventure 6" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0 cursor-pointer hover:scale-105 transition-transform" onclick="openLightbox(this)" />
+                    <img src="./images/compressed/photo7.jpeg" alt="Dog adventure 7" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0 cursor-pointer hover:scale-105 transition-transform" onclick="openLightbox(this)" />
+                    <img src="./images/compressed/photo8.jpeg" alt="Dog adventure 8" class="rounded-xl w-48 h-32 object-cover shadow-lg flex-shrink-0 cursor-pointer hover:scale-105 transition-transform" onclick="openLightbox(this)" />
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 hidden z-50 flex items-center justify-center" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Expanded view" class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl" />
+        <button class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300">&times;</button>
+    </div>
+
+    <script>
+        function openLightbox(img) {
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.remove('hidden');
+            document.getElementById('photo-carousel').style.animationPlayState = 'paused';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.getElementById('photo-carousel').style.animationPlayState = 'running';
+        }
+        // Pause on hover
+        document.getElementById('photo-carousel').addEventListener('mouseenter', function() {
+            this.querySelector('div').style.animationPlayState = 'paused';
+        });
+        document.getElementById('photo-carousel').addEventListener('mouseleave', function() {
+            this.querySelector('div').style.animationPlayState = 'running';
+        });
+    </script>
 
     <!-- Testimonials -->
     <section id="testimonials" class="py-20 px-4 bg-white">
