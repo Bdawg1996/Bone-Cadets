@@ -3,8 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bone Cadets</title>
+    <title>Bone Cadets | Professional Dog Walking in San Francisco</title>
+    <meta name="description" content="Professional dog walking services in San Francisco. 13+ years experience. Solo walks, pack adventures, pet sitting & more. Serving all SF neighborhoods. Book your free meet-and-greet today!">
+    <meta name="keywords" content="dog walking San Francisco, dog walker SF, pet sitting San Francisco, dog walker Nob Hill, dog walking Pacific Heights, dog walker Mission District, dog walking Sunset, dog walker Richmond">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bone Cadets | Professional Dog Walking in San Francisco">
+    <meta property="og:description" content="Professional dog walking services in San Francisco. 13+ years experience giving dogs their best days ever. Solo walks, pack adventures & more.">
+    <meta property="og:image" content="https://bonecadets.com/images/compressed/hero_image.jpeg">
+    <meta property="og:url" content="https://bonecadets.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bone Cadets | Professional Dog Walking in San Francisco">
+    <meta name="twitter:description" content="13+ years experience giving dogs their best days. Solo walks, pack adventures & more in SF.">
+    
     <link href="./output.css" rel="stylesheet">
+    
+    <!-- Schema.org LocalBusiness (hidden from users, helps Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Bone Cadets",
+      "description": "Professional dog walking services in San Francisco",
+      "telephone": "+1-310-650-3618",
+      "email": "Brandon@BoneCadets.com",
+      "url": "https://bonecadets.com",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "06:00",
+          "closes": "20:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "37.7749",
+          "longitude": "-122.4194"
+        },
+        "geoRadius": "20000"
+      },
+      "serviceArea": [
+        {"@type": "Place", "name": "Sunset District, San Francisco"},
+        {"@type": "Place", "name": "Richmond District, San Francisco"},
+        {"@type": "Place", "name": "Pacific Heights, San Francisco"},
+        {"@type": "Place", "name": "Nob Hill, San Francisco"},
+        {"@type": "Place", "name": "Mission District, San Francisco"},
+        {"@type": "Place", "name": "Parkside, San Francisco"},
+        {"@type": "Place", "name": "Daly City, California"},
+        {"@type": "Place", "name": "Brisbane, California"},
+        {"@type": "Place", "name": "Cow Hollow, San Francisco"},
+        {"@type": "Place", "name": "West Portal, San Francisco"},
+        {"@type": "Place", "name": "Forest Hill, San Francisco"},
+        {"@type": "Place", "name": "Haight-Ashbury, San Francisco"},
+        {"@type": "Place", "name": "Bayview, San Francisco"},
+        {"@type": "Place", "name": "South San Francisco, California"}
+      ],
+      "sameAs": [
+        "https://www.instagram.com/bonecadets/"
+      ]
+    }
+    </script>
+    
+    <!-- Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Recruit Walk",
+            "description": "One-on-one neighborhood walks for puppies, seniors, and anxious dogs. 30 or 60 minute options.",
+            "offers": {
+              "@type": "Offer",
+              "price": "25",
+              "priceCurrency": "USD",
+              "description": "30 minute walk"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "Cadet Adventure",
+            "description": "Pack walks and dog park adventures with up to 6 carefully matched dogs. Great for social, energetic pups.",
+            "offers": {
+              "@type": "Offer",
+              "price": "40",
+              "priceCurrency": "USD",
+              "description": "Per day"
+            }
+          }
+        }
+      ]
+    }
+    </script>
     <style>
         @keyframes fade-in {
             from { opacity: 0; transform: translateY(20px); }
