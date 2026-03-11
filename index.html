@@ -385,7 +385,7 @@
                             <span>Pet Transport</span>
                         </li>
                     </ul>
-                    <a href="mailto:Brandon@BoneCadets.com?subject=Question%20about%20Bone%20Cadets" class="block w-full text-center text-white py-3 rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all" style="background: linear-gradient(135deg, #8A6240 0%, #4D2D18 100%);">
+                    <a href="#contact" class="block w-full text-center text-white py-3 rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all" style="background: linear-gradient(135deg, #8A6240 0%, #4D2D18 100%);">
                         Contact Us
                     </a>
                 </div>
@@ -465,7 +465,7 @@
                             <li>Cat Care</li>
                             <li>Pet Transport</li>
                         </ul>
-                        <a href="mailto:Brandon@BoneCadets.com?subject=Question%20about%20Bone%20Cadets" class="block text-center text-white py-2 rounded-full font-bold text-sm" style="background: linear-gradient(135deg, #8A6240 0%, #4D2D18 100%);">Contact Us</a>
+                        <a href="#contact" class="block text-center text-white py-2 rounded-full font-bold text-sm" style="background: linear-gradient(135deg, #8A6240 0%, #4D2D18 100%);">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -660,33 +660,33 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-bold mb-2" style="color: #102820;">
-                            Dog's Breed <span style="color: #4C6444;">*</span>
+                            Dog's Breed
                         </label>
-                        <input type="text" name="dog-breed" required class="w-full px-4 py-3 rounded-lg border-2 focus:border-[#4C6444] focus:outline-none transition-colors" style="border-color: #CABA9C;" />
+                        <input type="text" name="dog-breed" class="w-full px-4 py-3 rounded-lg border-2 focus:border-[#4C6444] focus:outline-none transition-colors" style="border-color: #CABA9C;" placeholder="e.g., Golden Retriever, Mixed" />
                     </div>
                     <div>
                         <label class="block text-sm font-bold mb-2" style="color: #102820;">
-                            Dog's Age <span style="color: #4C6444;">*</span>
+                            Dog's Age
                         </label>
-                        <input type="text" name="dog-age" required class="w-full px-4 py-3 rounded-lg border-2 focus:border-[#4C6444] focus:outline-none transition-colors" style="border-color: #CABA9C;" placeholder="e.g., 2 years, 6 months" />
+                        <input type="text" name="dog-age" class="w-full px-4 py-3 rounded-lg border-2 focus:border-[#4C6444] focus:outline-none transition-colors" style="border-color: #CABA9C;" placeholder="e.g., 2 years, 6 months" />
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-sm font-bold mb-2" style="color: #102820;">
-                        Gets Along With Other Dogs? <span style="color: #4C6444;">*</span>
+                        Gets Along With Other Dogs?
                     </label>
                     <div class="flex gap-8">
                         <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="dog-friendly" value="yes" required class="w-4 h-4" />
+                            <input type="radio" name="dog-friendly" value="yes" class="w-4 h-4" />
                             <span style="color: #102820;">Yes</span>
                         </label>
                         <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="dog-friendly" value="no" required class="w-4 h-4" />
+                            <input type="radio" name="dog-friendly" value="no" class="w-4 h-4" />
                             <span style="color: #102820;">No</span>
                         </label>
                         <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="dog-friendly" value="sometimes" required class="w-4 h-4" />
+                            <input type="radio" name="dog-friendly" value="sometimes" class="w-4 h-4" />
                             <span style="color: #102820;">Sometimes</span>
                         </label>
                     </div>
@@ -694,16 +694,16 @@
 
                 <div>
                     <label class="block text-sm font-bold mb-2" style="color: #102820;">
-                        Describe Your Dog in 3 Words <span style="color: #4C6444;">*</span>
+                        Describe Your Dog in 3 Words
                     </label>
-                    <input type="text" name="three-words" required class="w-full px-4 py-3 rounded-lg border-2 focus:border-[#4C6444] focus:outline-none transition-colors" style="border-color: #CABA9C;" placeholder="e.g., Energetic, Friendly, Playful" />
+                    <input type="text" name="three-words" class="w-full px-4 py-3 rounded-lg border-2 focus:border-[#4C6444] focus:outline-none transition-colors" style="border-color: #CABA9C;" placeholder="e.g., Energetic, Friendly, Playful" />
                 </div>
 
                 <div>
                     <label class="block text-sm font-bold mb-2" style="color: #102820;">
-                        Service Details & Special Requests
+                        What services are you looking for today? <span style="color: #4C6444;">*</span>
                     </label>
-                    <textarea name="service-details" rows="4" class="w-full px-4 py-3 rounded-lg border-2 focus:border-[#4C6444] focus:outline-none transition-colors resize-none" style="border-color: #CABA9C;" placeholder="Please share any specific service preferences, scheduling needs, or special considerations for your pup..."></textarea>
+                    <textarea name="service-details" rows="4" required class="w-full px-4 py-3 rounded-lg border-2 focus:border-[#4C6444] focus:outline-none transition-colors resize-none" style="border-color: #CABA9C;" placeholder="Tell me about your dog and what you're looking for..."></textarea>
                 </div>
 
                 <button type="submit" class="w-full text-white py-4 rounded-full font-bold text-lg hover:shadow-xl transform hover:scale-105 transition-all" style="background: linear-gradient(to right, #4C6444, #102820);">
