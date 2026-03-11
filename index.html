@@ -128,6 +128,12 @@
         
         /* Mobile Optimizations */
         @media (max-width: 768px) {
+            /* Prevent overscroll bounce at top */
+            html, body {
+                overscroll-behavior: none;
+                -webkit-overflow-scrolling: touch;
+            }
+            
             /* Sticky CTA */
             .mobile-sticky-cta {
                 display: flex;
@@ -165,6 +171,7 @@
             #photo-carousel { margin: 0 -1rem; padding: 0.5rem 1rem; }
             #photo-carousel img { width: 4rem !important; height: 3rem !important; }
             #photo-carousel .flex { gap: 0.5rem !important; }
+            #photo-carousel { overscroll-behavior: contain; }
             
             /* Services cards better spacing */
             .rounded-2xl.p-5 { padding: 1rem; }
