@@ -83,12 +83,12 @@
           "item": {
             "@type": "Service",
             "name": "Recruit Walk",
-            "description": "One-on-one neighborhood walks for puppies, seniors, and anxious dogs. 30 or 60 minute options.",
+            "description": "One-on-one neighborhood walks for puppies, seniors, and anxious dogs. 60 minute walks.",
             "offers": {
               "@type": "Offer",
-              "price": "25",
+              "price": "45",
               "priceCurrency": "USD",
-              "description": "30 minute walk"
+              "description": "60 minute walk"
             }
           }
         },
@@ -101,7 +101,7 @@
             "description": "Pack walks and dog park adventures with up to 6 carefully matched dogs. Great for social, energetic pups.",
             "offers": {
               "@type": "Offer",
-              "price": "40",
+              "price": "35",
               "priceCurrency": "USD",
               "description": "Per day"
             }
@@ -124,6 +124,46 @@
         }
         #photo-carousel div { 
             animation: scroll 40s linear infinite; 
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            /* Sticky CTA */
+            .mobile-sticky-cta {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: #fff;
+                padding: 12px 16px;
+                box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+                z-index: 1000;
+                justify-content: center;
+                gap: 12px;
+            }
+            .mobile-sticky-cta a {
+                flex: 1;
+                max-width: 200px;
+                text-align: center;
+            }
+            
+            /* Better mobile typography */
+            .text-4xl { font-size: 2rem; }
+            .text-5xl { font-size: 2.5rem; }
+            
+            /* Tighter sections */
+            .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+            
+            /* About section mobile */
+            #about .grid { gap: 1.5rem; }
+            
+            /* Services cards better spacing */
+            .rounded-2xl.p-5 { padding: 1rem; }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-sticky-cta { display: none; }
         }
     </style>
 </head>
@@ -222,8 +262,8 @@
                 </div>
                 <div class="space-y-6">
                     <div class="space-y-4 text-lg text-white opacity-95">
-                        <p>I founded Bone Cadets because over the past 13 years of walking and caring for dogs, I've learned that nothing beats giving dogs their best days ever. From energetic puppies to wise old souls, each breed and temperament has taught me something about what makes tails wag the hardest.</p>
-                        <p>Operating out of San Francisco, Bone Cadets isn't just about walks. Whether solo, in a pack or at the park, Bone Cadets' mission is to turn every outing into an adventure where dogs build skills, confidence, and pure happiness.</p>
+                        <p>Hi, I'm Brandon, Chief Woof Officer here at Bone Cadets. I've been walking dogs professionally for over a decade, starting in Santa Monica before moving to San Francisco seven years ago. For the past three years, I've been doing this full-time in SF, and I've worked with every type of dog you can imagine: energetic puppies, wise seniors, couch potatoes, and absolute athletes. Every dog has their own personality, quirks, and way of showing what makes them happy — nothing beats discovering that with each one.</p>
+                        <p>I started Bone Cadets with a simple mission: turn every walk into an adventure. Whether your dog needs one-on-one focus or thrives in a carefully matched pack, my goal is to give them their best day ever, capture moments in photos you'll want to show off, and help them build skills and confidence along the way.</p>
                         <p class="italic font-semibold">-Brandon, Chief Woof Officer</p>
                     </div>
                 </div>
@@ -252,10 +292,7 @@
                     </div>
                     <div class="rounded-2xl p-6 mb-6 border-4 bg-gray-100" style="border-color: #4C6444;">
                         <div class="text-center py-2">
-                            <span class="text-3xl font-black" style="color: #102820;">$25 / 30 min</span>
-                        </div>
-                        <div class="text-center py-2">
-                            <span class="text-3xl font-black" style="color: #102820;">$40 / 60 min</span>
+                            <span class="text-3xl font-black" style="color: #102820;">$45 / hour</span>
                         </div>
                     </div>
                     <ul class="space-y-4">
@@ -294,10 +331,10 @@
                     </div>
                     <div class="rounded-2xl p-6 mb-6 border-4 bg-gray-100" style="border-color: #4C6444;">
                         <div class="text-center py-2">
-                            <span class="text-3xl font-black" style="color: #102820;">$40 / day</span>
+                            <span class="text-3xl font-black" style="color: #102820;">$35 / day</span>
                         </div>
                         <div class="text-center py-2">
-                            <span class="text-3xl font-black" style="color: #102820;">$150 / week</span>
+                            <span class="text-3xl font-black" style="color: #102820;">$125 / week (M-F)</span>
                         </div>
                     </div>
                     <ul class="space-y-4">
@@ -370,12 +407,8 @@
                         <div class="mb-3 py-2 rounded-lg bg-gray-100">
                             <div class="flex justify-center items-end gap-6">
                                 <div class="text-center">
-                                    <div class="text-lg font-black" style="color: #102820;">$25</div>
-                                    <div class="text-xs font-bold" style="color: #8A6240;">30 min</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="text-lg font-black" style="color: #102820;">$40</div>
-                                    <div class="text-xs font-bold" style="color: #8A6240;">60 min</div>
+                                    <div class="text-lg font-black" style="color: #102820;">$45</div>
+                                    <div class="text-xs font-bold" style="color: #8A6240;">hour</div>
                                 </div>
                             </div>
                         </div>
@@ -401,12 +434,12 @@
                         <div class="mb-3 py-2 rounded-lg bg-gray-100">
                             <div class="flex justify-center items-end gap-6">
                                 <div class="text-center">
-                                    <div class="text-lg font-black" style="color: #102820;">$40</div>
+                                    <div class="text-lg font-black" style="color: #102820;">$35</div>
                                     <div class="text-xs font-bold" style="color: #8A6240;">day</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-lg font-black" style="color: #102820;">$150</div>
-                                    <div class="text-xs font-bold" style="color: #8A6240;">week</div>
+                                    <div class="text-lg font-black" style="color: #102820;">$125</div>
+                                    <div class="text-xs font-bold" style="color: #8A6240;">week (M-F)</div>
                                 </div>
                             </div>
                         </div>
@@ -681,3 +714,10 @@
         </div>
     </div>
 </section>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-sticky-cta">
+    <a href="#contact" class="text-white py-3 px-6 rounded-full font-bold" style="background: linear-gradient(to right, #4C6444, #102820);">Book Now →</a>
+</div>
+
+</body>
