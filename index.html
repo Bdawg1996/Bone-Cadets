@@ -123,10 +123,21 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
-        #photo-carousel div { 
-            animation: scroll 40s linear infinite; 
+        #photo-carousel div {
+            animation: scroll 60s linear infinite;
         }
-        
+        /* Gallery images - larger, premium feel (desktop default) */
+        #photo-carousel img {
+            width: 20rem !important;
+            height: 15rem !important;
+            border-radius: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #photo-carousel img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.45);
+        }
+
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             /* Prevent overscroll bounce at top */
@@ -150,7 +161,7 @@
             #gallery .text-4xl { font-size: 1.5rem; }
             #gallery .mb-12 { margin-bottom: 1rem; }
             #photo-carousel { margin: 0 -1rem; padding: 0.5rem 1rem; }
-            #photo-carousel img { width: 6rem !important; height: 4.5rem !important; }
+            #photo-carousel img { width: 15rem !important; height: 11rem !important; }
             #photo-carousel .flex { gap: 0.5rem !important; }
             #photo-carousel { overscroll-behavior: contain; }
             
@@ -215,7 +226,6 @@
             <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="space-y-6 animate-fade-in">
                     <h1 class="text-5xl md:text-7xl font-bold leading-tight" style="color: #102820;">Bone Cadets</h1>
-                    <p class="text-sm font-semibold mt-1" style="color: #8A6240;">Est. 2026</p>
                     <p class="text-2xl md:text-3xl font-semibold mt-4" style="color: #8A6240;">
                         Professional dog walking in San Francisco providing fun & adventure to your dogs daily routine
                     </p>
@@ -453,7 +463,6 @@
                             <li class="flex items-start gap-1">• Pack walks & park play</li>
                             <li class="flex items-start gap-1">• Door-to-Door + photos</li>
                             <li class="flex items-start gap-1">• Great for energetic dogs</li>
-                            <li class="flex items-start gap-1">• Door-to-Door + photos</li>
                         </ul>
                         <a href="#contact" class="block text-center text-white py-2 rounded-full font-bold text-sm" style="background: linear-gradient(135deg, #4C6444 0%, #102820 100%);">Book Now</a>
                     </div>
@@ -628,7 +637,6 @@
             <p class="text-xl mb-4" style="color: #4D2D18;">
                 Ready to give your pup the adventure they deserve? Let's set up a meet-and-greet to see if we're the right fit. Your dog will thank you!
             </p>
-            </div>
         </div>
 
         <div class="bg-white rounded-3xl p-8 shadow-xl border-2" style="border-color: #4C6444;">
