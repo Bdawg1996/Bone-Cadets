@@ -175,6 +175,64 @@
             nav .space-x-3 { space-x-2; }
             nav .py-4 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
         }
+
+        html, body { overflow-x: hidden; }
+
+        /* Wave section dividers */
+        section { position: relative; }
+        .wave {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 48px;
+            line-height: 0;
+            pointer-events: none;
+        }
+        .wave svg { display: block; width: 100%; height: 100%; }
+        .wave-top { top: 0; transform: translateY(-99%); }
+        @media (min-width: 768px) { .wave { height: 70px; } }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .reveal.in-view { opacity: 1; transform: none; }
+
+        /* Floating hero "Cadet Approved" stamp */
+        @keyframes float-stamp {
+            0%, 100% { transform: rotate(-12deg) translateY(0); }
+            50% { transform: rotate(-12deg) translateY(-8px); }
+        }
+        .hero-stamp {
+            position: absolute;
+            top: -1rem;
+            right: 0.5rem;
+            width: 6.5rem;
+            height: 6.5rem;
+            border-radius: 9999px;
+            border: 3px dashed #ffffff;
+            background: linear-gradient(135deg, #4C6444 0%, #102820 100%);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 12px 30px -8px rgba(0,0,0,0.5);
+            animation: float-stamp 4s ease-in-out infinite;
+            z-index: 20;
+        }
+        .hero-stamp .star { font-size: 1.1rem; line-height: 1; }
+        .hero-stamp .big { font-size: 0.85rem; font-weight: 900; letter-spacing: 0.03em; line-height: 1.05; margin-top: 2px; }
+        .hero-stamp .sub { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.12em; opacity: 0.9; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .hero-stamp { animation: none; }
+            #photo-carousel div { animation: none; }
+        }
     </style>
 </head>
 <body style="background: linear-gradient(135deg, #CABA9C 0%, #ffffff 50%, #f5f1e8 100%);">
@@ -247,6 +305,11 @@
                     </div>
                 </div>
                 <div class="relative md:-mt-4">
+                    <div class="hero-stamp">
+                        <span class="star">★★★</span>
+                        <span class="big">CADET<br>APPROVED</span>
+                        <span class="sub">SF · EST 2026</span>
+                    </div>
                     <div class="rounded-2xl md:rounded-3xl h-80 md:h-96 shadow-xl overflow-hidden">
                         <img src="./images/compressed/hero_image.jpeg" alt="Dog walking adventure" class="w-full h-full object-cover object-top" />
                     </div>
@@ -269,7 +332,8 @@
 
     <!-- About -->
     <section id="about" class="py-16 md:py-20 px-4" style="background: linear-gradient(135deg, #4c6444 0%, #102820 100%);">
-        <div class="max-w-6xl mx-auto">
+        <div class="wave wave-top"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,32 C200,64 400,4 600,30 C800,56 1000,8 1200,30 L1200,60 L0,60 Z" fill="#4c6444"></path></svg></div>
+        <div class="max-w-6xl mx-auto reveal">
             <div class="text-center mb-12">
                 <h2 class="text-4xl md:text-5xl font-bold text-white">Meet Your Walker</h2>
             </div>
@@ -289,7 +353,8 @@
 
     <!-- Services -->
     <section id="services" class="py-20 px-4" style="background: linear-gradient(135deg, #CABA9C 0%, #f5f1e8 100%);">
-        <div class="max-w-7xl mx-auto">
+        <div class="wave wave-top"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,32 C200,64 400,4 600,30 C800,56 1000,8 1200,30 L1200,60 L0,60 Z" fill="#CABA9C"></path></svg></div>
+        <div class="max-w-7xl mx-auto reveal">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold" style="color: #102820;">Choose Your Adventure</h2>
                 <p class="text-lg mt-3" style="color: #8A6240;">Ask about our 1st pack specials!</p>
@@ -489,8 +554,9 @@
 
     <!-- Photos -->
     <section id="gallery" class="py-12 px-4" style="background: linear-gradient(135deg, #4C6444 0%, #102820 100%);">
+        <div class="wave wave-top"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,32 C200,64 400,4 600,30 C800,56 1000,8 1200,30 L1200,60 L0,60 Z" fill="#4C6444"></path></svg></div>
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
+            <div class="text-center mb-12 reveal">
                 <h2 class="text-4xl md:text-5xl font-bold text-white">Watch Their Adventures Unfold</h2>
             </div>
             <div class="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing" id="photo-carousel">
@@ -631,7 +697,8 @@
 
 <!-- Contact Form -->
 <section id="contact" class="py-20 px-4" style="background: linear-gradient(135deg, #CABA9C 0%, #f5f1e8 100%);">
-    <div class="max-w-3xl mx-auto">
+    <div class="wave wave-top"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,32 C200,64 400,4 600,30 C800,56 1000,8 1200,30 L1200,60 L0,60 Z" fill="#CABA9C"></path></svg></div>
+    <div class="max-w-3xl mx-auto reveal">
         <div class="text-center mb-12">
             <h2 class="text-4xl md:text-5xl font-bold mb-6" style="color: #102820;">Join the Pack</h2>
             <p class="text-xl mb-4" style="color: #4D2D18;">
@@ -729,7 +796,8 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-8 px-4 text-center" style="background-color: #102820; color: #CABA9C;">
+<footer class="py-8 px-4 text-center" style="background-color: #102820; color: #CABA9C; position: relative;">
+    <div class="wave wave-top"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,32 C200,64 400,4 600,30 C800,56 1000,8 1200,30 L1200,60 L0,60 Z" fill="#102820"></path></svg></div>
     <div class="max-w-7xl mx-auto">
         <p class="mb-4">
             <a href="https://www.instagram.com/bonecadets/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center justify-center gap-2">
@@ -740,5 +808,31 @@
         <p class="text-sm opacity-70">© 2026 Bone Cadets. All rights reserved.</p>
     </div>
 </footer>
+
+<script>
+    // Scroll-reveal: fade/slide sections in as they enter the viewport.
+    (function () {
+        var els = [].slice.call(document.querySelectorAll('.reveal'));
+        function show(el) { el.classList.add('in-view'); }
+        // Reveal anything already within (or above) the viewport — covers
+        // initial load, anchor jumps, and fast scrolls past a section.
+        function sweep() {
+            for (var i = 0; i < els.length; i++) {
+                var r = els[i].getBoundingClientRect();
+                if (r.top < window.innerHeight * 0.92) show(els[i]);
+            }
+        }
+        if (!('IntersectionObserver' in window)) { els.forEach(show); return; }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) { show(entry.target); io.unobserve(entry.target); }
+            });
+        }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (el) { io.observe(el); });
+        sweep();
+        window.addEventListener('scroll', sweep, { passive: true });
+        window.addEventListener('load', sweep);
+    })();
+</script>
 
 </body>
