@@ -178,6 +178,11 @@
 
         html, body { overflow-x: hidden; }
 
+        /* About: py-16 isn't in the prebuilt CSS, so set padding explicitly
+           (otherwise content sits flush under the wave divider) */
+        #about { padding-top: 4rem; padding-bottom: 4rem; }
+        @media (max-width: 768px) { #about { padding-top: 3rem; padding-bottom: 3rem; } }
+
         /* Wave section dividers */
         section { position: relative; }
         .wave {
